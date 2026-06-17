@@ -1,0 +1,8 @@
+opportunity_id,category,created_at,host_user_id,guest_user_id,invitation_sent_at,booking_confirmed_at,status
+OP001,Sports,2026-01-02 08:50:00,U001,U005,2026-01-02 09:15:00,2026-01-02 10:20:00,Confirmed
+OP002,Music,2026-01-03 10:40:00,U004,U002,,,Viewed Only
+OP003,Games,2026-01-06 08:10:00,U004,U007,2026-01-06 08:40:00,2026-01-07 09:10:00,Confirmed
+OP004,Sports,2026-01-10 14:50:00,U001,U005,,,Viewed Only
+OP005,Education,2026-01-12 09:45:00,U006,U010,2026-01-12 10:21:00,,Pending
+OP006,Games,2026-02-01 08:55:00,U009,U013,2026-02-01 09:17:00,2026-02-03 12:30:00,Confirmed
+OP007,Sports,2026-02-14 12:50:00,U015,U013,,,Search Only
