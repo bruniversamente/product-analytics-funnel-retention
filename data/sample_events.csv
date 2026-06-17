@@ -1,0 +1,51 @@
+event_id,user_id,event_timestamp,event_name,session_id,platform,acquisition_channel,opportunity_id,category
+E001,U001,2026-01-02 09:01:00,app_open,S001,iOS,Organic,,
+E002,U001,2026-01-02 09:03:00,signup_completed,S001,iOS,Organic,,
+E003,U001,2026-01-02 09:06:00,profile_completed,S001,iOS,Organic,,
+E004,U001,2026-01-02 09:09:00,search_performed,S001,iOS,Organic,OP001,Sports
+E005,U001,2026-01-02 09:12:00,opportunity_viewed,S001,iOS,Organic,OP001,Sports
+E006,U001,2026-01-02 09:15:00,invitation_sent,S001,iOS,Organic,OP001,Sports
+E007,U001,2026-01-02 10:20:00,booking_confirmed,S002,iOS,Organic,OP001,Sports
+E008,U002,2026-01-03 11:00:00,app_open,S003,Android,Paid Search,,
+E009,U002,2026-01-03 11:02:00,signup_completed,S003,Android,Paid Search,,
+E010,U002,2026-01-03 11:08:00,profile_completed,S003,Android,Paid Search,,
+E011,U002,2026-01-03 11:10:00,search_performed,S003,Android,Paid Search,OP002,Music
+E012,U002,2026-01-03 11:12:00,opportunity_viewed,S003,Android,Paid Search,OP002,Music
+E013,U003,2026-01-05 19:05:00,app_open,S004,Web,Social,,
+E014,U003,2026-01-05 19:07:00,signup_completed,S004,Web,Social,,
+E015,U004,2026-01-06 08:20:00,app_open,S005,iOS,Referral,,
+E016,U004,2026-01-06 08:22:00,signup_completed,S005,iOS,Referral,,
+E017,U004,2026-01-06 08:27:00,profile_completed,S005,iOS,Referral,,
+E018,U004,2026-01-06 08:31:00,search_performed,S005,iOS,Referral,OP003,Games
+E019,U004,2026-01-06 08:35:00,opportunity_viewed,S005,iOS,Referral,OP003,Games
+E020,U004,2026-01-06 08:40:00,invitation_sent,S005,iOS,Referral,OP003,Games
+E021,U004,2026-01-07 09:10:00,booking_confirmed,S006,iOS,Referral,OP003,Games
+E022,U005,2026-01-09 14:00:00,app_open,S007,Android,Organic,,
+E023,U005,2026-01-09 14:03:00,signup_completed,S007,Android,Organic,,
+E024,U005,2026-01-09 14:10:00,profile_completed,S007,Android,Organic,,
+E025,U005,2026-01-10 15:11:00,app_open,S008,Android,Organic,,
+E026,U005,2026-01-10 15:14:00,search_performed,S008,Android,Organic,OP004,Sports
+E027,U005,2026-01-10 15:16:00,opportunity_viewed,S008,Android,Organic,OP004,Sports
+E028,U006,2026-01-12 10:00:00,app_open,S009,Web,Paid Search,,
+E029,U006,2026-01-12 10:05:00,signup_completed,S009,Web,Paid Search,,
+E030,U006,2026-01-12 10:09:00,profile_completed,S009,Web,Paid Search,,
+E031,U006,2026-01-12 10:12:00,search_performed,S009,Web,Paid Search,OP005,Education
+E032,U006,2026-01-12 10:16:00,opportunity_viewed,S009,Web,Paid Search,OP005,Education
+E033,U006,2026-01-12 10:21:00,invitation_sent,S009,Web,Paid Search,OP005,Education
+E034,U007,2026-01-15 20:00:00,app_open,S010,iOS,Social,,
+E035,U007,2026-01-15 20:02:00,signup_completed,S010,iOS,Social,,
+E036,U007,2026-01-16 20:10:00,app_open,S011,iOS,Social,,
+E037,U009,2026-02-01 09:00:00,app_open,S012,Web,Organic,,
+E038,U009,2026-02-01 09:02:00,signup_completed,S012,Web,Organic,,
+E039,U009,2026-02-01 09:07:00,profile_completed,S012,Web,Organic,,
+E040,U009,2026-02-01 09:11:00,search_performed,S012,Web,Organic,OP006,Games
+E041,U009,2026-02-01 09:14:00,opportunity_viewed,S012,Web,Organic,OP006,Games
+E042,U009,2026-02-01 09:17:00,invitation_sent,S012,Web,Organic,OP006,Games
+E043,U009,2026-02-03 12:30:00,booking_confirmed,S013,Web,Organic,OP006,Games
+E044,U010,2026-02-03 16:00:00,app_open,S014,Android,Paid Search,,
+E045,U010,2026-02-03 16:04:00,signup_completed,S014,Android,Paid Search,,
+E046,U010,2026-02-04 16:20:00,app_open,S015,Android,Paid Search,,
+E047,U013,2026-02-14 13:00:00,app_open,S016,Android,Organic,,
+E048,U013,2026-02-14 13:04:00,signup_completed,S016,Android,Organic,,
+E049,U013,2026-02-14 13:12:00,profile_completed,S016,Android,Organic,,
+E050,U013,2026-02-14 13:20:00,search_performed,S016,Android,Organic,OP007,Sports
