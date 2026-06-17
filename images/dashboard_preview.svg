@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#f6f8fb"/>
+  <rect x="40" y="32" width="1120" height="72" rx="16" fill="#111827"/>
+  <text x="70" y="78" font-family="Arial" font-size="28" font-weight="700" fill="#ffffff">Product Analytics: Funnel, Retention and Marketplace</text>
+  <text x="900" y="78" font-family="Arial" font-size="18" fill="#d1d5db">Portfolio Case</text>
+
+  <g font-family="Arial">
+    <rect x="40" y="130" width="208" height="105" rx="14" fill="#ffffff" stroke="#dbe3ef"/>
+    <text x="62" y="164" font-size="16" fill="#6b7280">Active Users</text>
+    <text x="62" y="208" font-size="30" font-weight="700" fill="#111827">15</text>
+
+    <rect x="268" y="130" width="208" height="105" rx="14" fill="#ffffff" stroke="#dbe3ef"/>
+    <text x="290" y="164" font-size="16" fill="#6b7280">Activation Rate</text>
+    <text x="290" y="208" font-size="30" font-weight="700" fill="#111827">20%</text>
+
+    <rect x="496" y="130" width="208" height="105" rx="14" fill="#ffffff" stroke="#dbe3ef"/>
+    <text x="518" y="164" font-size="16" fill="#6b7280">Confirmed Bookings</text>
+    <text x="518" y="208" font-size="30" font-weight="700" fill="#111827">3</text>
+
+    <rect x="724" y="130" width="208" height="105" rx="14" fill="#ffffff" stroke="#dbe3ef"/>
+    <text x="746" y="164" font-size="16" fill="#6b7280">Confirmation Rate</text>
+    <text x="746" y="208" font-size="30" font-weight="700" fill="#111827">75%</text>
+
+    <rect x="952" y="130" width="208" height="105" rx="14" fill="#ffffff" stroke="#dbe3ef"/>
+    <text x="974" y="164" font-size="16" fill="#6b7280">Avg Time</text>
+    <text x="974" y="208" font-size="30" font-weight="700" fill="#111827">31h</text>
+  </g>
+
+  <rect x="40" y="265" width="540" height="285" rx="16" fill="#ffffff" stroke="#dbe3ef"/>
+  <text x="70" y="305" font-family="Arial" font-size="20" font-weight="700" fill="#111827">Activation funnel</text>
+  <g font-family="Arial" font-size="14" fill="#374151">
+    <rect x="85" y="340" width="420" height="26" rx="5" fill="#374151"/>
+    <text x="515" y="358">App open</text>
+    <rect x="85" y="378" width="360" height="26" rx="5" fill="#4b5563"/>
+    <text x="455" y="396">Signup</text>
+    <rect x="85" y="416" width="290" height="26" rx="5" fill="#6b7280"/>
+    <text x="385" y="434">Profile</text>
+    <rect x="85" y="454" width="230" height="26" rx="5" fill="#9ca3af"/>
+    <text x="325" y="472">Search</text>
+    <rect x="85" y="492" width="135" height="26" rx="5" fill="#d1d5db"/>
+    <text x="230" y="510">Confirmed</text>
+  </g>
+
+  <rect x="620" y="265" width="540" height="285" rx="16" fill="#ffffff" stroke="#dbe3ef"/>
+  <text x="650" y="305" font-family="Arial" font-size="20" font-weight="700" fill="#111827">Retention by cohort</text>
+  <g font-family="Arial" font-size="14" fill="#374151">
+    <rect x="680" y="345" width="70" height="45" fill="#374151"/><rect x="755" y="345" width="70" height="45" fill="#6b7280"/><rect x="830" y="345" width="70" height="45" fill="#9ca3af"/><rect x="905" y="345" width="70" height="45" fill="#d1d5db"/>
+    <rect x="680" y="395" width="70" height="45" fill="#4b5563"/><rect x="755" y="395" width="70" height="45" fill="#9ca3af"/><rect x="830" y="395" width="70" height="45" fill="#d1d5db"/><rect x="905" y="395" width="70" height="45" fill="#e5e7eb"/>
+    <rect x="680" y="445" width="70" height="45" fill="#6b7280"/><rect x="755" y="445" width="70" height="45" fill="#d1d5db"/><rect x="830" y="445" width="70" height="45" fill="#e5e7eb"/><rect x="905" y="445" width="70" height="45" fill="#f3f4f6"/>
+    <text x="650" y="372">Jan</text><text x="650" y="422">Feb</text><text x="650" y="472">Mar</text>
+    <text x="695" y="515">W0</text><text x="770" y="515">W1</text><text x="845" y="515">W2</text><text x="920" y="515">W3</text>
+  </g>
+
+  <rect x="40" y="580" width="1120" height="95" rx="16" fill="#ffffff" stroke="#dbe3ef"/>
+  <text x="70" y="620" font-family="Arial" font-size="20" font-weight="700" fill="#111827">Analytical story</text>
+  <text x="70" y="653" font-family="Arial" font-size="16" fill="#374151">The project turns product events into funnel, retention and marketplace KPIs for roadmap and growth decisions.</text>
+</svg>
