@@ -1,0 +1,16 @@
+user_id,signup_date,persona,region,acquisition_channel,platform
+U001,2026-01-02,Host,South,Organic,iOS
+U002,2026-01-03,Guest,Southeast,Paid Search,Android
+U003,2026-01-05,Guest,Southeast,Social,Web
+U004,2026-01-06,Host,South,Referral,iOS
+U005,2026-01-09,Guest,South,Organic,Android
+U006,2026-01-12,Host,Southeast,Paid Search,Web
+U007,2026-01-15,Guest,South,Social,iOS
+U008,2026-01-20,Guest,South,Referral,Android
+U009,2026-02-01,Host,Southeast,Organic,Web
+U010,2026-02-03,Guest,Northeast,Paid Search,Android
+U011,2026-02-08,Guest,South,Social,iOS
+U012,2026-02-10,Host,South,Referral,Web
+U013,2026-02-14,Guest,Southeast,Organic,Android
+U014,2026-02-18,Guest,Southeast,Social,iOS
+U015,2026-02-22,Host,South,Paid Search,Web
