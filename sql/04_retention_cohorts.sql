@@ -48,10 +48,10 @@ WITH cohort_activity AS (
 ),
 cohort_size AS (
     SELECT
-        signup_month,
+        STRFTIME(signup_date, '%Y-%m') AS signup_month,
         COUNT(DISTINCT user_id) AS users_in_cohort
     FROM dim_users
-    GROUP BY signup_month
+    GROUP BY STRFTIME(signup_date, '%Y-%m')
 )
 SELECT
     activity.signup_month,
