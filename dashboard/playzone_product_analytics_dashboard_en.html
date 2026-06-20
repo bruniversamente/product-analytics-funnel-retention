@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playzone Product Analytics Dashboard</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --ink: #18202f;
+      --muted: #667085;
+      --line: #d9dee7;
+      --blue: #2563eb;
+      --teal: #0891b2;
+      --green: #16a34a;
+      --amber: #d97706;
+      --red: #dc2626;
+      --shadow: 0 18px 45px rgba(24, 32, 47, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 14px/1.45 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-bottom: 18px;
+    }
+    .hero-copy, .panel, .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .hero-copy {
+      padding: 26px;
+      min-height: 220px;
+    }
+    .eyebrow {
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 8px 0 10px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .hero-copy p {
+      margin: 0;
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .hero-side {
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+    .decision {
+      border-left: 4px solid var(--blue);
+      padding-left: 14px;
+    }
+    .decision strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    .kpi-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-bottom: 16px;
+    }
+    .card {
+      padding: 18px;
+      min-height: 126px;
+    }
+    .card small {
+      display: block;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .card strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .card span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+    }
+    .two-col {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      margin-bottom: 16px;
+    }
+    .panel {
+      padding: 20px;
+      min-width: 0;
+    }
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .funnel {
+      display: grid;
+      gap: 10px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 148px minmax(140px, 1fr) 86px;
+      gap: 12px;
+      align-items: center;
+    }
+    .bar-label {
+      font-weight: 700;
+    }
+    .track {
+      height: 22px;
+      background: #eef2f7;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+    .fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue), var(--teal));
+      border-radius: 5px;
+    }
+    .bar-value {
+      text-align: right;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .channel-bars {
+      display: grid;
+      gap: 12px;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .legend span::before {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      margin-right: 6px;
+      border-radius: 2px;
+      background: var(--blue);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #e8ecf2;
+      text-align: left;
+      white-space: nowrap;
+    }
+    th {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+    td.num, th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .heatmap {
+      display: grid;
+      grid-template-columns: 90px repeat(5, minmax(48px, 1fr));
+      gap: 6px;
+      align-items: center;
+    }
+    .heatmap div {
+      min-height: 34px;
+      border-radius: 5px;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      color: #172033;
+      background: #eef2f7;
+    }
+    .heatmap .head, .heatmap .month {
+      background: transparent;
+      color: var(--muted);
+      font-weight: 800;
+    }
+    .sources {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    @media (max-width: 920px) {
+      main { padding: 16px; }
+      .hero, .two-col, .kpi-grid { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 1fr; gap: 6px; }
+      .bar-value { text-align: left; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Product Analytics Case | Playzone</div>
+        <h1>Funnel, retention and marketplace liquidity</h1>
+        <p>Static reproducible dashboard to evaluate whether users reach the value moment: invitation sent and booking confirmed in an experiences, games and activities platform.</p>
+      </div>
+      <aside class="hero-side panel">
+        <div class="decision">
+          <strong>Executive read</strong>
+          <span id="decisionText">Loading summary...</span>
+        </div>
+        <div class="note">Source: synthetic data generated with Python, modeled in DuckDB and exported as CSV. Funnel logic uses chronological order by user.</div>
+      </aside>
+    </section>
+
+    <section class="grid kpi-grid" id="kpis"></section>
+
+    <section class="grid two-col">
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Ordered activation funnel</h2>
+          <span class="note">Unique users by step</span>
+        </div>
+        <div class="funnel" id="funnel"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Activation by channel</h2>
+          <span class="note">Conversion to confirmed booking</span>
+        </div>
+        <div class="channel-bars" id="channels"></div>
+      </div>
+    </section>
+
+    <section class="grid two-col">
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Retention by activation</h2>
+          <span class="note">D1, D7 e D30</span>
+        </div>
+        <table id="retentionTable"></table>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Liquidity by category</h2>
+          <span class="note">Confirmations after invitation</span>
+        </div>
+        <table id="categoryTable"></table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Weekly retention cohorts</h2>
+        <span class="note">Weeks 0 to 4 after signup</span>
+      </div>
+      <div class="heatmap" id="cohortHeatmap"></div>
+    </section>
+
+    <section class="sources">
+      <strong>Methodology:</strong> activation is defined as `booking_confirmed` after the sequence `app_open -> signup_completed -> profile_completed -> search_performed -> opportunity_viewed -> invitation_sent`. The dashboard is generated by `scripts/build_outputs.py`; reviewed extracts are available in `outputs/`.
+    </section>
+  </main>
+
+  <script id="dashboardData" type="application/json">{"kpi_summary": [{"total_users": 500, "app_open_users": 500, "signup_users": 447, "profile_users": 340, "search_users": 219, "opportunity_view_users": 128, "invitation_users": 45, "activated_users": 28, "activation_rate": 0.056, "avg_hours_to_activation": 42.18, "opportunities_created": 219, "opportunities_invited": 45, "confirmed_bookings": 28, "confirmation_rate": 0.6222, "avg_hours_to_confirmation": 41.89}], "ordered_funnel": [{"step_order": 1, "step_label": "App open", "users_at_step": 500, "conversion_from_start": 1.0, "conversion_from_previous": null, "loss_from_previous": null}, {"step_order": 2, "step_label": "Signup completed", "users_at_step": 447, "conversion_from_start": 0.894, "conversion_from_previous": 0.894, "loss_from_previous": 0.106}, {"step_order": 3, "step_label": "Profile completed", "users_at_step": 340, "conversion_from_start": 0.68, "conversion_from_previous": 0.7606, "loss_from_previous": 0.2394}, {"step_order": 4, "step_label": "Search performed", "users_at_step": 219, "conversion_from_start": 0.438, "conversion_from_previous": 0.6441, "loss_from_previous": 0.3559}, {"step_order": 5, "step_label": "Opportunity viewed", "users_at_step": 128, "conversion_from_start": 0.256, "conversion_from_previous": 0.5845, "loss_from_previous": 0.4155}, {"step_order": 6, "step_label": "Invitation sent", "users_at_step": 45, "conversion_from_start": 0.09, "conversion_from_previous": 0.3516, "loss_from_previous": 0.6484}, {"step_order": 7, "step_label": "Booking confirmed", "users_at_step": 28, "conversion_from_start": 0.056, "conversion_from_previous": 0.6222, "loss_from_previous": 0.3778}], "funnel_by_channel": [{"acquisition_channel": "Organic", "step_order": 1, "step_label": "App open", "users_at_step": 118, "conversion_from_start": 1.0}, {"acquisition_channel": "Organic", "step_order": 2, "step_label": "Signup completed", "users_at_step": 108, "conversion_from_start": 0.9153}, {"acquisition_channel": "Organic", "step_order": 3, "step_label": "Profile completed", "users_at_step": 88, "conversion_from_start": 0.7458}, {"acquisition_channel": "Organic", "step_order": 4, "step_label": "Search performed", "users_at_step": 55, "conversion_from_start": 0.4661}, {"acquisition_channel": "Organic", "step_order": 5, "step_label": "Opportunity viewed", "users_at_step": 34, "conversion_from_start": 0.2881}, {"acquisition_channel": "Organic", "step_order": 6, "step_label": "Invitation sent", "users_at_step": 9, "conversion_from_start": 0.0763}, {"acquisition_channel": "Organic", "step_order": 7, "step_label": "Booking confirmed", "users_at_step": 3, "conversion_from_start": 0.0254}, {"acquisition_channel": "Paid Search", "step_order": 1, "step_label": "App open", "users_at_step": 128, "conversion_from_start": 1.0}, {"acquisition_channel": "Paid Search", "step_order": 2, "step_label": "Signup completed", "users_at_step": 113, "conversion_from_start": 0.8828}, {"acquisition_channel": "Paid Search", "step_order": 3, "step_label": "Profile completed", "users_at_step": 78, "conversion_from_start": 0.6094}, {"acquisition_channel": "Paid Search", "step_order": 4, "step_label": "Search performed", "users_at_step": 45, "conversion_from_start": 0.3516}, {"acquisition_channel": "Paid Search", "step_order": 5, "step_label": "Opportunity viewed", "users_at_step": 31, "conversion_from_start": 0.2422}, {"acquisition_channel": "Paid Search", "step_order": 6, "step_label": "Invitation sent", "users_at_step": 8, "conversion_from_start": 0.0625}, {"acquisition_channel": "Paid Search", "step_order": 7, "step_label": "Booking confirmed", "users_at_step": 6, "conversion_from_start": 0.0469}, {"acquisition_channel": "Referral", "step_order": 1, "step_label": "App open", "users_at_step": 144, "conversion_from_start": 1.0}, {"acquisition_channel": "Referral", "step_order": 2, "step_label": "Signup completed", "users_at_step": 131, "conversion_from_start": 0.9097}, {"acquisition_channel": "Referral", "step_order": 3, "step_label": "Profile completed", "users_at_step": 98, "conversion_from_start": 0.6806}, {"acquisition_channel": "Referral", "step_order": 4, "step_label": "Search performed", "users_at_step": 69, "conversion_from_start": 0.4792}, {"acquisition_channel": "Referral", "step_order": 5, "step_label": "Opportunity viewed", "users_at_step": 37, "conversion_from_start": 0.2569}, {"acquisition_channel": "Referral", "step_order": 6, "step_label": "Invitation sent", "users_at_step": 14, "conversion_from_start": 0.0972}, {"acquisition_channel": "Referral", "step_order": 7, "step_label": "Booking confirmed", "users_at_step": 8, "conversion_from_start": 0.0556}, {"acquisition_channel": "Social", "step_order": 1, "step_label": "App open", "users_at_step": 110, "conversion_from_start": 1.0}, {"acquisition_channel": "Social", "step_order": 2, "step_label": "Signup completed", "users_at_step": 95, "conversion_from_start": 0.8636}, {"acquisition_channel": "Social", "step_order": 3, "step_label": "Profile completed", "users_at_step": 76, "conversion_from_start": 0.6909}, {"acquisition_channel": "Social", "step_order": 4, "step_label": "Search performed", "users_at_step": 50, "conversion_from_start": 0.4545}, {"acquisition_channel": "Social", "step_order": 5, "step_label": "Opportunity viewed", "users_at_step": 26, "conversion_from_start": 0.2364}, {"acquisition_channel": "Social", "step_order": 6, "step_label": "Invitation sent", "users_at_step": 14, "conversion_from_start": 0.1273}, {"acquisition_channel": "Social", "step_order": 7, "step_label": "Booking confirmed", "users_at_step": 11, "conversion_from_start": 0.1}], "retention_by_activation": [{"activation_status": "Activated", "users": 28, "retention_d1": 0.5714, "retention_d7": 0.4286, "retention_d30": 0.3571}, {"activation_status": "Not activated", "users": 472, "retention_d1": 0.3919, "retention_d7": 0.2394, "retention_d30": 0.1483}], "cohort_retention": [{"signup_month": "2026-01", "week_number": 0, "active_users": 126, "users_in_cohort": 126, "retention_rate": 1.0}, {"signup_month": "2026-01", "week_number": 1, "active_users": 30, "users_in_cohort": 126, "retention_rate": 0.2381}, {"signup_month": "2026-01", "week_number": 2, "active_users": 31, "users_in_cohort": 126, "retention_rate": 0.246}, {"signup_month": "2026-01", "week_number": 3, "active_users": 21, "users_in_cohort": 126, "retention_rate": 0.1667}, {"signup_month": "2026-01", "week_number": 4, "active_users": 23, "users_in_cohort": 126, "retention_rate": 0.1825}, {"signup_month": "2026-02", "week_number": 0, "active_users": 115, "users_in_cohort": 115, "retention_rate": 1.0}, {"signup_month": "2026-02", "week_number": 1, "active_users": 35, "users_in_cohort": 115, "retention_rate": 0.3043}, {"signup_month": "2026-02", "week_number": 2, "active_users": 21, "users_in_cohort": 115, "retention_rate": 0.1826}, {"signup_month": "2026-02", "week_number": 3, "active_users": 22, "users_in_cohort": 115, "retention_rate": 0.1913}, {"signup_month": "2026-02", "week_number": 4, "active_users": 19, "users_in_cohort": 115, "retention_rate": 0.1652}, {"signup_month": "2026-03", "week_number": 0, "active_users": 139, "users_in_cohort": 139, "retention_rate": 1.0}, {"signup_month": "2026-03", "week_number": 1, "active_users": 29, "users_in_cohort": 139, "retention_rate": 0.2086}, {"signup_month": "2026-03", "week_number": 2, "active_users": 25, "users_in_cohort": 139, "retention_rate": 0.1799}, {"signup_month": "2026-03", "week_number": 3, "active_users": 27, "users_in_cohort": 139, "retention_rate": 0.1942}, {"signup_month": "2026-03", "week_number": 4, "active_users": 24, "users_in_cohort": 139, "retention_rate": 0.1727}, {"signup_month": "2026-04", "week_number": 0, "active_users": 117, "users_in_cohort": 117, "retention_rate": 1.0}, {"signup_month": "2026-04", "week_number": 1, "active_users": 30, "users_in_cohort": 117, "retention_rate": 0.2564}, {"signup_month": "2026-04", "week_number": 2, "active_users": 31, "users_in_cohort": 117, "retention_rate": 0.265}, {"signup_month": "2026-04", "week_number": 3, "active_users": 25, "users_in_cohort": 117, "retention_rate": 0.2137}, {"signup_month": "2026-04", "week_number": 4, "active_users": 14, "users_in_cohort": 117, "retention_rate": 0.1197}, {"signup_month": "2026-05", "week_number": 0, "active_users": 3, "users_in_cohort": 3, "retention_rate": 1.0}, {"signup_month": "2026-05", "week_number": 1, "active_users": 1, "users_in_cohort": 3, "retention_rate": 0.3333}], "marketplace_category_metrics": [{"category": "Games", "opportunities": 43, "invitations_sent": 11, "confirmed_bookings": 8, "confirmation_rate": 0.7273, "avg_hours_to_confirmation": 44.0}, {"category": "Education", "opportunities": 54, "invitations_sent": 9, "confirmed_bookings": 6, "confirmation_rate": 0.6667, "avg_hours_to_confirmation": 36.5}, {"category": "Sports", "opportunities": 45, "invitations_sent": 11, "confirmed_bookings": 7, "confirmation_rate": 0.6364, "avg_hours_to_confirmation": 42.86}, {"category": "Wellness", "opportunities": 46, "invitations_sent": 9, "confirmed_bookings": 5, "confirmation_rate": 0.5556, "avg_hours_to_confirmation": 34.2}, {"category": "Music", "opportunities": 31, "invitations_sent": 5, "confirmed_bookings": 2, "confirmation_rate": 0.4, "avg_hours_to_confirmation": 65.5}], "data_quality_summary": [{"rule_name": "duplicate_event_id", "severity": "Critical", "failed_records": 0}, {"rule_name": "event_without_valid_user", "severity": "Critical", "failed_records": 0}, {"rule_name": "event_outside_taxonomy", "severity": "Critical", "failed_records": 0}, {"rule_name": "opportunity_event_missing_id", "severity": "Warning", "failed_records": 0}, {"rule_name": "event_before_signup", "severity": "Critical", "failed_records": 0}, {"rule_name": "booking_before_invitation", "severity": "Critical", "failed_records": 0}]}</script>
+  <script>
+    const data = JSON.parse(document.getElementById("dashboardData").textContent);
+    const fmt = new Intl.NumberFormat("en-US");
+    const pct = (v) => `${(Number(v || 0) * 100).toFixed(1)}%`;
+    const num = (v) => fmt.format(Number(v || 0));
+    const kpi = data.kpi_summary[0];
+
+    const funnel = data.ordered_funnel;
+    const biggestDrop = funnel.slice(1).sort((a, b) => Number(b.loss_from_previous || 0) - Number(a.loss_from_previous || 0))[0];
+    document.getElementById("decisionText").textContent =
+      `Ordered activation is ${pct(kpi.activation_rate)}. The largest leak is at "${biggestDrop.step_label}", with a ${pct(biggestDrop.loss_from_previous)} loss from the previous step.`;
+
+    const kpis = [
+      ["Users", num(kpi.total_users), "Reviewed synthetic base"],
+      ["Activation", pct(kpi.activation_rate), "Confirmed booking in the ordered funnel"],
+      ["Confirmations", num(kpi.confirmed_bookings), "Confirmed marketplace bookings"],
+      ["Liquidity", pct(kpi.confirmation_rate), "Confirmations after invitation"]
+    ];
+    document.getElementById("kpis").innerHTML = kpis.map(([label, value, sub]) => `
+      <article class="card"><small>${label}</small><strong>${value}</strong><span>${sub}</span></article>
+    `).join("");
+
+    const maxUsers = Number(funnel[0].users_at_step);
+    document.getElementById("funnel").innerHTML = funnel.map((row) => {
+      const width = Math.max(2, Number(row.users_at_step) / maxUsers * 100);
+      return `<div class="bar-row">
+        <div class="bar-label">${row.step_order}. ${row.step_label}</div>
+        <div class="track"><div class="fill" style="width: ${width}%"></div></div>
+        <div class="bar-value">${num(row.users_at_step)} · ${pct(row.conversion_from_start)}</div>
+      </div>`;
+    }).join("");
+
+    const finalChannelRows = data.funnel_by_channel
+      .filter((row) => row.step_label === "Booking confirmed")
+      .sort((a, b) => Number(b.conversion_from_start || 0) - Number(a.conversion_from_start || 0));
+    const maxChannel = Math.max(...finalChannelRows.map((row) => Number(row.conversion_from_start || 0)));
+    document.getElementById("channels").innerHTML = finalChannelRows.map((row) => {
+      const width = Math.max(2, Number(row.conversion_from_start || 0) / maxChannel * 100);
+      return `<div class="bar-row">
+        <div class="bar-label">${row.acquisition_channel}</div>
+        <div class="track"><div class="fill" style="width: ${width}%; background: linear-gradient(90deg, var(--green), var(--teal));"></div></div>
+        <div class="bar-value">${pct(row.conversion_from_start)}</div>
+      </div>`;
+    }).join("");
+
+    function table(el, headers, rows) {
+      document.getElementById(el).innerHTML = `
+        <thead><tr>${headers.map((h) => `<th class="${h.num ? "num" : ""}">${h.label}</th>`).join("")}</tr></thead>
+        <tbody>${rows.map((row) => `<tr>${headers.map((h) => `<td class="${h.num ? "num" : ""}">${h.format ? h.format(row[h.key]) : row[h.key]}</td>`).join("")}</tr>`).join("")}</tbody>
+      `;
+    }
+
+    table("retentionTable", [
+      { key: "activation_status", label: "Status" },
+      { key: "users", label: "Users", num: true, format: num },
+      { key: "retention_d1", label: "D1", num: true, format: pct },
+      { key: "retention_d7", label: "D7", num: true, format: pct },
+      { key: "retention_d30", label: "D30", num: true, format: pct }
+    ], data.retention_by_activation);
+
+    table("categoryTable", [
+      { key: "category", label: "Category" },
+      { key: "opportunities", label: "Opportunities", num: true, format: num },
+      { key: "invitations_sent", label: "Invites", num: true, format: num },
+      { key: "confirmed_bookings", label: "Confirmations", num: true, format: num },
+      { key: "confirmation_rate", label: "Rate", num: true, format: pct }
+    ], data.marketplace_category_metrics);
+
+    const months = [...new Set(data.cohort_retention.map((row) => row.signup_month))];
+    const weekLabels = [0, 1, 2, 3, 4];
+    const byKey = new Map(data.cohort_retention.map((row) => [`${row.signup_month}-${row.week_number}`, row]));
+    const heat = document.getElementById("cohortHeatmap");
+    heat.innerHTML = `<div class="head">Cohort</div>${weekLabels.map((w) => `<div class="head">S${w}</div>`).join("")}` +
+      months.map((month) => {
+        const cells = weekLabels.map((week) => {
+          const row = byKey.get(`${month}-${week}`);
+          const value = Number(row?.retention_rate || 0);
+          const alpha = 0.08 + value * 0.72;
+          return `<div style="background: rgba(37, 99, 235, ${alpha})">${pct(value)}</div>`;
+        }).join("");
+        return `<div class="month">${month}</div>${cells}`;
+      }).join("");
+  </script>
+</body>
+</html>

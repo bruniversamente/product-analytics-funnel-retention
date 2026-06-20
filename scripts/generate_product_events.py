@@ -16,7 +16,7 @@ PERSONAS = ["Host", "Guest"]
 REGIONS = ["South", "Southeast", "Northeast"]
 CATEGORIES = ["Sports", "Music", "Games", "Education", "Wellness"]
 FUNNEL = ["app_open", "signup_completed", "profile_completed", "search_performed", "opportunity_viewed", "invitation_sent", "booking_confirmed"]
-STEP_PROB = [1.00, 0.92, 0.72, 0.58, 0.46, 0.29, 0.16]
+STEP_PROB = [1.00, 0.92, 0.76, 0.64, 0.52, 0.38, 0.55]
 
 
 def write_csv(path, rows):
@@ -96,7 +96,12 @@ def main():
                 "status": status,
             })
 
-        for day_offset, probability in [(1, 0.42), (7, 0.28), (30, 0.16)]:
+        retention_probabilities = (
+            [(1, 0.62), (7, 0.44), (14, 0.36), (21, 0.32), (30, 0.28)]
+            if confirmation_time
+            else [(1, 0.38), (7, 0.24), (14, 0.19), (21, 0.16), (30, 0.13)]
+        )
+        for day_offset, probability in retention_probabilities:
             if random.random() < probability:
                 repeat_time = signup + timedelta(days=day_offset, hours=random.randint(0, 3))
                 events.append({

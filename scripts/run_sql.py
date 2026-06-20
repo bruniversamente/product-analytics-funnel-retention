@@ -8,6 +8,8 @@ from pathlib import Path
 
 import duckdb
 
+from generate_product_events import main as generate_product_events
+
 ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = ROOT / "product_analytics.duckdb"
 SQL_FILES = [
@@ -19,17 +21,37 @@ SQL_FILES = [
 ]
 
 
-def main():
-    con = duckdb.connect(str(DB_PATH))
-    for sql_file in SQL_FILES:
-        print(f"\n--- Running {sql_file.name} ---")
-        sql = sql_file.read_text(encoding="utf-8")
-        result = con.execute(sql)
-        try:
+def uncommented_prefix(statement: str) -> str:
+    lines = []
+    for line in statement.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("--"):
+            continue
+        lines.append(stripped)
+    return "\n".join(lines).lower()
+
+
+def run_sql_file(connection, sql_file: Path) -> None:
+    print(f"\n--- Running {sql_file.name} ---")
+    sql = sql_file.read_text(encoding="utf-8")
+    statements = [statement.strip() for statement in sql.split(";") if statement.strip()]
+
+    for index, statement in enumerate(statements, start=1):
+        result = connection.execute(statement)
+        prefix = uncommented_prefix(statement)
+        if prefix.startswith(("select", "with")):
+            print(f"\nQuery {index}")
             print(result.fetchdf())
-        except Exception:
-            print("Script executed.")
-    con.close()
+
+
+def main():
+    generate_product_events()
+    con = duckdb.connect(str(DB_PATH))
+    try:
+        for sql_file in SQL_FILES:
+            run_sql_file(con, sql_file)
+    finally:
+        con.close()
     print(f"\nDatabase created at: {DB_PATH}")
 
 

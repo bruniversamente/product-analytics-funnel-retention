@@ -1,0 +1,8 @@
+step_order,step_label,users_at_step,conversion_from_start,conversion_from_previous,loss_from_previous
+1,Abertura do app,500,1.0,,
+2,Cadastro concluído,447,0.894,0.894,0.106
+3,Perfil completo,340,0.68,0.7606,0.2394
+4,Busca realizada,219,0.438,0.6441,0.3559
+5,Oportunidade vista,128,0.256,0.5845,0.4155
+6,Convite enviado,45,0.09,0.3516,0.6484
+7,Reserva confirmada,28,0.056,0.6222,0.3778

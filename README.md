@@ -1,66 +1,93 @@
-# Product Analytics: Funnel, Retention and Marketplace Metrics
+# Playzone Product Analytics: activation, retention and marketplace liquidity
 
-Portfolio project for Product Analytics in a digital marketplace. The goal is to simulate event data, define a tracking plan, measure activation funnel, cohort retention and marketplace efficiency.
+[Portuguese version](README.pt-BR.md)
 
-The dataset is synthetic and created only for portfolio purposes. It simulates a real product analytics scenario using SQL, DuckDB, Python, event taxonomy, product KPIs and business recommendations.
+Main portfolio case study designed to answer a product analytics question: **where should Playzone act first to increase activation?**
 
-## Business problem
+Playzone simulates a digital platform for experiences, games and activities. The case measures whether users reach the product's value moment, where the journey loses momentum, which acquisition channels activate better, whether activation connects with retention, and which marketplace categories create more liquidity.
 
-A digital product needs to understand if users reach the main value moment, where they abandon the journey and whether they return after the first experience. Because it is a marketplace, the team also needs to monitor how well supply and demand connect.
+> Synthetic data created for portfolio purposes. The project simulates a real product analytics workflow with Python, SQL, DuckDB, tracking plan, data quality checks, ordered funnel metrics, retention cohorts and a reproducible HTML dashboard.
 
-Main questions:
+## Executive Summary
 
-- What share of users completes the activation funnel?
-- Which funnel step has the highest user loss?
-- Do activated users retain better than non-activated users?
-- How long does it take for an opportunity to become confirmed?
-- Which acquisition channel brings users with better activation and retention?
+**Core question:** are Playzone users reaching the value moment: a confirmed booking after discovering an opportunity and sending an invitation?
 
-## Project goal
+**Short answer:** only a small share of users reaches activation. The biggest opportunity is not bringing more users to the top of the funnel; it is reducing the drop between **Opportunity viewed** and **Invitation sent**.
 
-Build an analytical layer for product decisions, translating events into actionable indicators for roadmap, growth and user experience improvements.
+**Recommended decision:** before increasing acquisition spend, Playzone should improve the invitation step: opportunity recommendations, value proposition clarity, availability, invite incentives, social proof or friction in the screen where users decide to move forward.
 
-## Skills demonstrated
+Current build highlights:
 
-- Tracking plan and event taxonomy.
-- SQL for funnel analysis, cohorts, segmentation and marketplace metrics.
-- Python for synthetic data generation.
-- DuckDB as a local analytical engine.
-- Documentation for events, properties, business rules and data quality.
-- Data storytelling for product prioritization.
+| Metric | Result |
+|---|---:|
+| Users analyzed | 500 |
+| Events analyzed | 2,316 |
+| Opportunities created | 219 |
+| Ordered activation rate | 5.6% |
+| Confirmed bookings | 28 |
+| Confirmation rate after invitation | 62.2% |
+| Largest funnel drop | Invitation sent, 64.8% loss from previous step |
+| Best channel by ordered activation | Social, 10.0% |
+| Weakest channel by ordered activation | Organic, 2.5% |
+| Strongest category after invitation | Games, 72.7% confirmation |
+| Critical data quality failures | 0 |
 
-## Repository structure
+## Why This Is The Main Case
+
+This is the strongest portfolio case because it combines the signals hiring teams usually look for:
+
+1. **Clear business problem:** increase activation in a digital product.
+2. **Well-defined metric:** confirmed booking in an ordered funnel, not just clicks or signups.
+3. **Actionable diagnosis:** the largest leak is before the invitation, not at the top of the funnel.
+4. **Auditable delivery:** synthetic data, SQL, CSV outputs, documentation and a reproducible dashboard.
+
+Interview version: "I investigated the activation journey, found that only 5.6% of users reach the value moment, and identified that the first lever should be the move toward invitation sent, because confirmation after invitation is already relatively strong."
+
+## Dashboard
+
+Open the static dashboard at:
 
 ```text
-product-analytics-funnel-retention/
-├── data/
-│   ├── sample_users.csv
-│   ├── sample_events.csv
-│   ├── sample_marketplace_actions.csv
-│   └── README.md
-├── docs/
-│   ├── business_rules.md
-│   ├── dashboard_blueprint.md
-│   ├── data_dictionary.md
-│   └── tracking_plan.md
-├── images/
-│   └── dashboard_preview.svg
-├── powerbi/
-│   └── measures_dax.md
-├── scripts/
-│   ├── generate_product_events.py
-│   └── run_sql.py
-├── sql/
-│   ├── 01_create_schema_duckdb.sql
-│   ├── 02_data_quality_checks.sql
-│   ├── 03_funnel_analysis.sql
-│   ├── 04_retention_cohorts.sql
-│   └── 05_marketplace_metrics.sql
-├── requirements.txt
-└── README.md
+dashboard/playzone_product_analytics_dashboard.html
 ```
 
-## Activation funnel
+Explicit language variants are also generated:
+
+```text
+dashboard/playzone_product_analytics_dashboard_en.html
+dashboard/playzone_product_analytics_dashboard_pt-BR.html
+```
+
+It is designed for a recruiter or product leader: top KPIs, ordered funnel, channel comparison, retention by activation, category liquidity and weekly cohorts.
+
+![Dashboard preview](images/dashboard_preview.png)
+
+## Business Problem
+
+Playzone needs to know whether the product is leading users to the value moment. Signup or app open is not enough: the strongest signal is a confirmed booking, because it means the platform connected interest, opportunity and availability.
+
+Questions answered:
+
+- What share of users reaches confirmed booking?
+- Which funnel step loses the most users?
+- Do activated users retain better than non-activated users?
+- Which channels bring higher-activation users?
+- Which categories have better liquidity after invitation?
+- Are the data consistent enough to support the read?
+
+## Product Read
+
+The ordered funnel shows the journey does not break at a single technical event; it loses momentum progressively. The most critical point is the move from **Opportunity viewed** to **Invitation sent**: 128 users view an opportunity, but only 45 send an invitation. That is a **64.8%** loss at this step.
+
+After an invitation is sent, the confirmation rate is **62.2%**. This suggests the main issue is not necessarily the final confirmation step, but the previous decision: turning user interest into action.
+
+The channel read reinforces the need to investigate acquisition quality and product promise. **Social** reaches **10.0%** ordered activation, while **Organic** reaches **2.5%**. This is not causal proof, but it is a strong starting point for investigating messaging, user intent and onboarding.
+
+Retention also supports activation as a key metric: activated users reach **35.7% D30 retention**, compared with **14.8%** among non-activated users.
+
+## Analytical Methodology
+
+The main funnel is calculated in chronological order by user:
 
 1. `app_open`
 2. `signup_completed`
@@ -70,77 +97,59 @@ product-analytics-funnel-retention/
 6. `invitation_sent`
 7. `booking_confirmed`
 
-The event `booking_confirmed` represents the main value moment.
+This avoids a common mistake: counting users who had the events, but not necessarily in the correct sequence. D1, D7 and D30 retention are measured through return app opens after signup, so initial journey events are not counted as retention.
 
-## Main KPIs
+## Deliverables
 
-- Active users
-- New users
-- Funnel conversion by step
-- Funnel loss by step
-- Time to activation
-- D1, D7 and D30 retention
-- Monthly cohort retention
-- Invitation sent rate
-- Confirmation rate
-- Time to confirmation
-- Marketplace liquidity
+- `dashboard/playzone_product_analytics_dashboard.html`: default English dashboard.
+- `dashboard/playzone_product_analytics_dashboard_en.html`: explicit English dashboard.
+- `dashboard/playzone_product_analytics_dashboard_pt-BR.html`: Portuguese dashboard.
+- `outputs/executive_findings.md`: English executive findings.
+- `outputs/executive_findings.pt-BR.md`: Portuguese executive findings.
+- `outputs/*.csv`: reviewed analytical extracts.
+- `docs/`: business rules, tracking plan, data dictionary and dashboard blueprint.
+- `scripts/`: synthetic data generation, output build and SQL runner.
+- `sql/`: DuckDB queries for quality checks, funnel, retention and marketplace metrics.
 
-## Dashboard preview
+## Skills Demonstrated
 
-![Dashboard preview](images/dashboard_preview.svg)
+- Product analytics: activation funnel, cohorts, retention and marketplace liquidity.
+- SQL: CTEs, windows, joins, ordered funnel logic and segmented metrics.
+- Python: synthetic data generation and reproducible output build.
+- DuckDB: local analytical modeling and reviewable queries.
+- Data quality: event taxonomy, duplicate IDs, missing users, invalid dates and temporal order checks.
+- Storytelling: translating metrics into product recommendations.
+- Visualization: portable HTML dashboard without external runtime dependencies.
 
-## How to run locally
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/bruniversamente/product-analytics-funnel-retention.git
-cd product-analytics-funnel-retention
-```
-
-2. Install dependencies:
+## Reproduce
 
 ```bash
 pip install -r requirements.txt
-```
-
-3. Run the SQL scripts with DuckDB:
-
-```bash
+python scripts/build_outputs.py
 python scripts/run_sql.py
 ```
 
-4. Generate a larger dataset if needed:
+Open:
 
-```bash
-python scripts/generate_product_events.py
+```text
+dashboard/playzone_product_analytics_dashboard.html
 ```
 
-## Expected insights
+## Simulated Recommendations
 
-This analysis helps identify:
+1. Prioritize the drop from opportunity viewed to invitation sent, because it is the largest measurable funnel leak.
+2. Review the invitation flow: value proposition clarity, availability, price, social proof, reminders and calls to action.
+3. Investigate why `Organic` activates less than `Social`, treating channel as a hypothesis about intent and acquisition quality.
+4. Use activated users as the retention benchmark, because the D30 difference is meaningful.
+5. Improve offer, availability or recommendations in categories with lower confirmation rates.
+6. Keep data quality checks in place before publishing product metrics to leadership.
 
-1. Onboarding steps with the highest user loss.
-2. Acquisition channels with better activation quality.
-3. Retention differences between activated and non-activated users.
-4. Marketplace liquidity gaps.
-5. Changes in average time to confirmation.
+## Method References
 
-## Simulated business recommendations
-
-- Reduce friction between signup and profile completion.
-- Trigger reminders for users who viewed opportunities but did not send invitations.
-- Prioritize categories with high search volume and low confirmation rate.
-- Monitor retention among users who reached the value moment.
-- Create alerts when time to confirmation exceeds the expected threshold.
-
-## Next steps
-
-- Build the final Power BI `.pbix` file.
-- Add a simulated A/B experiment analysis.
-- Add segmentation by persona, channel and opportunity category.
-- Publish the case in the main portfolio website.
+- [Amplitude: Funnel Analysis](https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-build)
+- [Amplitude: ordered funnel computation](https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-computes)
+- [Mixpanel: Retention reports](https://docs.mixpanel.com/docs/reports/retention)
+- [PostHog: Funnels](https://posthog.com/docs/product-analytics/funnels)
 
 ## Author
 

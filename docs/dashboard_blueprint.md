@@ -1,64 +1,61 @@
-# Dashboard blueprint
+﻿# Blueprint do dashboard
 
-This document describes the proposed Power BI dashboard for the project.
+Este documento descreve o dashboard principal do case Playzone.
 
-## Page 1 - Product overview
+Artefato entregue:
 
-Goal: provide a quick view of product performance.
+```text
+dashboard/playzone_product_analytics_dashboard.html
+```
 
-### Main cards
+## Objetivo
 
-- Active users
-- New users
-- Activation rate
-- Confirmed bookings
-- Confirmation rate
-- Average time to confirmation
+Permitir que recrutadores, líderes de produto e analistas entendam rapidamente:
 
-### Charts
+- quantos usuários chegam ao momento de valor;
+- em qual etapa a jornada perde mais usuários;
+- quais canais trazem usuários com melhor ativação;
+- se usuários ativados retêm melhor;
+- quais categorias geram mais liquidez no marketplace;
+- se há falhas críticas de qualidade nos dados.
 
-1. Active users by week
-2. Activation funnel
-3. Users by acquisition channel
-4. Activation rate by channel
-5. Confirmed bookings by category
-6. Time to confirmation by category
+## Estrutura visual
 
-## Page 2 - Funnel diagnostics
+### 1. Leitura executiva
 
-Goal: identify the largest losses in the user journey.
+Resumo curto no topo com a decisão principal: onde está o maior gargalo e qual métrica deve orientar priorização.
 
-### Charts
+### 2. Cards principais
 
-- Funnel by step
-- Drop between steps
-- Funnel by platform
-- Funnel by acquisition channel
-- Table with users by step and conversion rate
+- Usuários analisados
+- Taxa de ativação ordenada
+- Reservas confirmadas
+- Taxa de confirmação após convite
 
-## Page 3 - Retention cohorts
+### 3. Funil ordenado
 
-Goal: compare retention across signup cohorts.
+Gráfico de barras horizontais com usuários por etapa e conversão acumulada.
 
-### Charts
+### 4. Ativação por canal
 
-- Monthly cohort matrix
-- Retention by activation status
-- D1, D7 and D30 retention cards
-- Active users over time
+Comparação da conversão até `booking_confirmed` por canal de aquisição.
 
-## Page 4 - Marketplace liquidity
+### 5. Retenção por ativação
 
-Goal: monitor the connection between supply and demand.
+Tabela D1, D7 e D30 para usuários ativados vs. não ativados.
 
-### Charts
+### 6. Liquidez por categoria
 
-- Invitations sent by category
-- Confirmed bookings by category
-- Confirmation rate by category
-- Average time to confirmation
-- Opportunities by status
+Tabela com oportunidades, convites, reservas confirmadas e taxa de confirmação.
 
-## Design notes
+### 7. Cohorts semanais
 
-The first version should be simple and analytical. The dashboard should prioritize clarity, consistent filters and direct business interpretation.
+Mapa de calor simples para leitura de retenção por cohort de cadastro.
+
+## Princípios de design
+
+- A primeira tela deve responder a pergunta principal sem interação.
+- O dashboard deve ser estático e portátil, sem dependência externa.
+- Números agregados devem reconciliar com os CSVs em `outputs/`.
+- Tabelas devem mostrar amostra e denominador para evitar leitura enganosa.
+- A metodologia deve aparecer no rodapé para deixar claro como funil e retenção foram calculados.

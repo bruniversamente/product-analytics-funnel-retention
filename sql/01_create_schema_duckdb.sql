@@ -9,7 +9,7 @@ SELECT
     region,
     acquisition_channel,
     platform
-FROM read_csv_auto('data/sample_users.csv');
+FROM read_csv_auto('data/generated/users.csv');
 
 CREATE OR REPLACE TABLE fact_events AS
 SELECT
@@ -23,7 +23,7 @@ SELECT
     acquisition_channel,
     opportunity_id,
     category
-FROM read_csv_auto('data/sample_events.csv');
+FROM read_csv_auto('data/generated/events.csv');
 
 CREATE OR REPLACE TABLE fact_marketplace_actions AS
 SELECT
@@ -35,7 +35,7 @@ SELECT
     CAST(invitation_sent_at AS TIMESTAMP) AS invitation_sent_at,
     CAST(booking_confirmed_at AS TIMESTAMP) AS booking_confirmed_at,
     status
-FROM read_csv_auto('data/sample_marketplace_actions.csv');
+FROM read_csv_auto('data/generated/marketplace_actions.csv');
 
 CREATE OR REPLACE VIEW vw_events_enriched AS
 SELECT

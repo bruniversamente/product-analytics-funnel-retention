@@ -1,0 +1,523 @@
+{
+  "kpi_summary": [
+    {
+      "total_users": 500,
+      "app_open_users": 500,
+      "signup_users": 447,
+      "profile_users": 340,
+      "search_users": 219,
+      "opportunity_view_users": 128,
+      "invitation_users": 45,
+      "activated_users": 28,
+      "activation_rate": 0.056,
+      "avg_hours_to_activation": 42.18,
+      "opportunities_created": 219,
+      "opportunities_invited": 45,
+      "confirmed_bookings": 28,
+      "confirmation_rate": 0.6222,
+      "avg_hours_to_confirmation": 41.89
+    }
+  ],
+  "ordered_funnel": [
+    {
+      "step_order": 1,
+      "step_label": "Abertura do app",
+      "users_at_step": 500,
+      "conversion_from_start": 1.0,
+      "conversion_from_previous": null,
+      "loss_from_previous": null
+    },
+    {
+      "step_order": 2,
+      "step_label": "Cadastro concluído",
+      "users_at_step": 447,
+      "conversion_from_start": 0.894,
+      "conversion_from_previous": 0.894,
+      "loss_from_previous": 0.106
+    },
+    {
+      "step_order": 3,
+      "step_label": "Perfil completo",
+      "users_at_step": 340,
+      "conversion_from_start": 0.68,
+      "conversion_from_previous": 0.7606,
+      "loss_from_previous": 0.2394
+    },
+    {
+      "step_order": 4,
+      "step_label": "Busca realizada",
+      "users_at_step": 219,
+      "conversion_from_start": 0.438,
+      "conversion_from_previous": 0.6441,
+      "loss_from_previous": 0.3559
+    },
+    {
+      "step_order": 5,
+      "step_label": "Oportunidade vista",
+      "users_at_step": 128,
+      "conversion_from_start": 0.256,
+      "conversion_from_previous": 0.5845,
+      "loss_from_previous": 0.4155
+    },
+    {
+      "step_order": 6,
+      "step_label": "Convite enviado",
+      "users_at_step": 45,
+      "conversion_from_start": 0.09,
+      "conversion_from_previous": 0.3516,
+      "loss_from_previous": 0.6484
+    },
+    {
+      "step_order": 7,
+      "step_label": "Reserva confirmada",
+      "users_at_step": 28,
+      "conversion_from_start": 0.056,
+      "conversion_from_previous": 0.6222,
+      "loss_from_previous": 0.3778
+    }
+  ],
+  "funnel_by_channel": [
+    {
+      "acquisition_channel": "Organic",
+      "step_order": 1,
+      "step_label": "Abertura do app",
+      "users_at_step": 118,
+      "conversion_from_start": 1.0
+    },
+    {
+      "acquisition_channel": "Organic",
+      "step_order": 2,
+      "step_label": "Cadastro concluído",
+      "users_at_step": 108,
+      "conversion_from_start": 0.9153
+    },
+    {
+      "acquisition_channel": "Organic",
+      "step_order": 3,
+      "step_label": "Perfil completo",
+      "users_at_step": 88,
+      "conversion_from_start": 0.7458
+    },
+    {
+      "acquisition_channel": "Organic",
+      "step_order": 4,
+      "step_label": "Busca realizada",
+      "users_at_step": 55,
+      "conversion_from_start": 0.4661
+    },
+    {
+      "acquisition_channel": "Organic",
+      "step_order": 5,
+      "step_label": "Oportunidade vista",
+      "users_at_step": 34,
+      "conversion_from_start": 0.2881
+    },
+    {
+      "acquisition_channel": "Organic",
+      "step_order": 6,
+      "step_label": "Convite enviado",
+      "users_at_step": 9,
+      "conversion_from_start": 0.0763
+    },
+    {
+      "acquisition_channel": "Organic",
+      "step_order": 7,
+      "step_label": "Reserva confirmada",
+      "users_at_step": 3,
+      "conversion_from_start": 0.0254
+    },
+    {
+      "acquisition_channel": "Paid Search",
+      "step_order": 1,
+      "step_label": "Abertura do app",
+      "users_at_step": 128,
+      "conversion_from_start": 1.0
+    },
+    {
+      "acquisition_channel": "Paid Search",
+      "step_order": 2,
+      "step_label": "Cadastro concluído",
+      "users_at_step": 113,
+      "conversion_from_start": 0.8828
+    },
+    {
+      "acquisition_channel": "Paid Search",
+      "step_order": 3,
+      "step_label": "Perfil completo",
+      "users_at_step": 78,
+      "conversion_from_start": 0.6094
+    },
+    {
+      "acquisition_channel": "Paid Search",
+      "step_order": 4,
+      "step_label": "Busca realizada",
+      "users_at_step": 45,
+      "conversion_from_start": 0.3516
+    },
+    {
+      "acquisition_channel": "Paid Search",
+      "step_order": 5,
+      "step_label": "Oportunidade vista",
+      "users_at_step": 31,
+      "conversion_from_start": 0.2422
+    },
+    {
+      "acquisition_channel": "Paid Search",
+      "step_order": 6,
+      "step_label": "Convite enviado",
+      "users_at_step": 8,
+      "conversion_from_start": 0.0625
+    },
+    {
+      "acquisition_channel": "Paid Search",
+      "step_order": 7,
+      "step_label": "Reserva confirmada",
+      "users_at_step": 6,
+      "conversion_from_start": 0.0469
+    },
+    {
+      "acquisition_channel": "Referral",
+      "step_order": 1,
+      "step_label": "Abertura do app",
+      "users_at_step": 144,
+      "conversion_from_start": 1.0
+    },
+    {
+      "acquisition_channel": "Referral",
+      "step_order": 2,
+      "step_label": "Cadastro concluído",
+      "users_at_step": 131,
+      "conversion_from_start": 0.9097
+    },
+    {
+      "acquisition_channel": "Referral",
+      "step_order": 3,
+      "step_label": "Perfil completo",
+      "users_at_step": 98,
+      "conversion_from_start": 0.6806
+    },
+    {
+      "acquisition_channel": "Referral",
+      "step_order": 4,
+      "step_label": "Busca realizada",
+      "users_at_step": 69,
+      "conversion_from_start": 0.4792
+    },
+    {
+      "acquisition_channel": "Referral",
+      "step_order": 5,
+      "step_label": "Oportunidade vista",
+      "users_at_step": 37,
+      "conversion_from_start": 0.2569
+    },
+    {
+      "acquisition_channel": "Referral",
+      "step_order": 6,
+      "step_label": "Convite enviado",
+      "users_at_step": 14,
+      "conversion_from_start": 0.0972
+    },
+    {
+      "acquisition_channel": "Referral",
+      "step_order": 7,
+      "step_label": "Reserva confirmada",
+      "users_at_step": 8,
+      "conversion_from_start": 0.0556
+    },
+    {
+      "acquisition_channel": "Social",
+      "step_order": 1,
+      "step_label": "Abertura do app",
+      "users_at_step": 110,
+      "conversion_from_start": 1.0
+    },
+    {
+      "acquisition_channel": "Social",
+      "step_order": 2,
+      "step_label": "Cadastro concluído",
+      "users_at_step": 95,
+      "conversion_from_start": 0.8636
+    },
+    {
+      "acquisition_channel": "Social",
+      "step_order": 3,
+      "step_label": "Perfil completo",
+      "users_at_step": 76,
+      "conversion_from_start": 0.6909
+    },
+    {
+      "acquisition_channel": "Social",
+      "step_order": 4,
+      "step_label": "Busca realizada",
+      "users_at_step": 50,
+      "conversion_from_start": 0.4545
+    },
+    {
+      "acquisition_channel": "Social",
+      "step_order": 5,
+      "step_label": "Oportunidade vista",
+      "users_at_step": 26,
+      "conversion_from_start": 0.2364
+    },
+    {
+      "acquisition_channel": "Social",
+      "step_order": 6,
+      "step_label": "Convite enviado",
+      "users_at_step": 14,
+      "conversion_from_start": 0.1273
+    },
+    {
+      "acquisition_channel": "Social",
+      "step_order": 7,
+      "step_label": "Reserva confirmada",
+      "users_at_step": 11,
+      "conversion_from_start": 0.1
+    }
+  ],
+  "retention_by_activation": [
+    {
+      "activation_status": "Ativados",
+      "users": 28,
+      "retention_d1": 0.5714,
+      "retention_d7": 0.4286,
+      "retention_d30": 0.3571
+    },
+    {
+      "activation_status": "Não ativados",
+      "users": 472,
+      "retention_d1": 0.3919,
+      "retention_d7": 0.2394,
+      "retention_d30": 0.1483
+    }
+  ],
+  "cohort_retention": [
+    {
+      "signup_month": "2026-01",
+      "week_number": 0,
+      "active_users": 126,
+      "users_in_cohort": 126,
+      "retention_rate": 1.0
+    },
+    {
+      "signup_month": "2026-01",
+      "week_number": 1,
+      "active_users": 30,
+      "users_in_cohort": 126,
+      "retention_rate": 0.2381
+    },
+    {
+      "signup_month": "2026-01",
+      "week_number": 2,
+      "active_users": 31,
+      "users_in_cohort": 126,
+      "retention_rate": 0.246
+    },
+    {
+      "signup_month": "2026-01",
+      "week_number": 3,
+      "active_users": 21,
+      "users_in_cohort": 126,
+      "retention_rate": 0.1667
+    },
+    {
+      "signup_month": "2026-01",
+      "week_number": 4,
+      "active_users": 23,
+      "users_in_cohort": 126,
+      "retention_rate": 0.1825
+    },
+    {
+      "signup_month": "2026-02",
+      "week_number": 0,
+      "active_users": 115,
+      "users_in_cohort": 115,
+      "retention_rate": 1.0
+    },
+    {
+      "signup_month": "2026-02",
+      "week_number": 1,
+      "active_users": 35,
+      "users_in_cohort": 115,
+      "retention_rate": 0.3043
+    },
+    {
+      "signup_month": "2026-02",
+      "week_number": 2,
+      "active_users": 21,
+      "users_in_cohort": 115,
+      "retention_rate": 0.1826
+    },
+    {
+      "signup_month": "2026-02",
+      "week_number": 3,
+      "active_users": 22,
+      "users_in_cohort": 115,
+      "retention_rate": 0.1913
+    },
+    {
+      "signup_month": "2026-02",
+      "week_number": 4,
+      "active_users": 19,
+      "users_in_cohort": 115,
+      "retention_rate": 0.1652
+    },
+    {
+      "signup_month": "2026-03",
+      "week_number": 0,
+      "active_users": 139,
+      "users_in_cohort": 139,
+      "retention_rate": 1.0
+    },
+    {
+      "signup_month": "2026-03",
+      "week_number": 1,
+      "active_users": 29,
+      "users_in_cohort": 139,
+      "retention_rate": 0.2086
+    },
+    {
+      "signup_month": "2026-03",
+      "week_number": 2,
+      "active_users": 25,
+      "users_in_cohort": 139,
+      "retention_rate": 0.1799
+    },
+    {
+      "signup_month": "2026-03",
+      "week_number": 3,
+      "active_users": 27,
+      "users_in_cohort": 139,
+      "retention_rate": 0.1942
+    },
+    {
+      "signup_month": "2026-03",
+      "week_number": 4,
+      "active_users": 24,
+      "users_in_cohort": 139,
+      "retention_rate": 0.1727
+    },
+    {
+      "signup_month": "2026-04",
+      "week_number": 0,
+      "active_users": 117,
+      "users_in_cohort": 117,
+      "retention_rate": 1.0
+    },
+    {
+      "signup_month": "2026-04",
+      "week_number": 1,
+      "active_users": 30,
+      "users_in_cohort": 117,
+      "retention_rate": 0.2564
+    },
+    {
+      "signup_month": "2026-04",
+      "week_number": 2,
+      "active_users": 31,
+      "users_in_cohort": 117,
+      "retention_rate": 0.265
+    },
+    {
+      "signup_month": "2026-04",
+      "week_number": 3,
+      "active_users": 25,
+      "users_in_cohort": 117,
+      "retention_rate": 0.2137
+    },
+    {
+      "signup_month": "2026-04",
+      "week_number": 4,
+      "active_users": 14,
+      "users_in_cohort": 117,
+      "retention_rate": 0.1197
+    },
+    {
+      "signup_month": "2026-05",
+      "week_number": 0,
+      "active_users": 3,
+      "users_in_cohort": 3,
+      "retention_rate": 1.0
+    },
+    {
+      "signup_month": "2026-05",
+      "week_number": 1,
+      "active_users": 1,
+      "users_in_cohort": 3,
+      "retention_rate": 0.3333
+    }
+  ],
+  "marketplace_category_metrics": [
+    {
+      "category": "Games",
+      "opportunities": 43,
+      "invitations_sent": 11,
+      "confirmed_bookings": 8,
+      "confirmation_rate": 0.7273,
+      "avg_hours_to_confirmation": 44.0
+    },
+    {
+      "category": "Education",
+      "opportunities": 54,
+      "invitations_sent": 9,
+      "confirmed_bookings": 6,
+      "confirmation_rate": 0.6667,
+      "avg_hours_to_confirmation": 36.5
+    },
+    {
+      "category": "Sports",
+      "opportunities": 45,
+      "invitations_sent": 11,
+      "confirmed_bookings": 7,
+      "confirmation_rate": 0.6364,
+      "avg_hours_to_confirmation": 42.86
+    },
+    {
+      "category": "Wellness",
+      "opportunities": 46,
+      "invitations_sent": 9,
+      "confirmed_bookings": 5,
+      "confirmation_rate": 0.5556,
+      "avg_hours_to_confirmation": 34.2
+    },
+    {
+      "category": "Music",
+      "opportunities": 31,
+      "invitations_sent": 5,
+      "confirmed_bookings": 2,
+      "confirmation_rate": 0.4,
+      "avg_hours_to_confirmation": 65.5
+    }
+  ],
+  "data_quality_summary": [
+    {
+      "rule_name": "duplicate_event_id",
+      "severity": "Critical",
+      "failed_records": 0
+    },
+    {
+      "rule_name": "event_without_valid_user",
+      "severity": "Critical",
+      "failed_records": 0
+    },
+    {
+      "rule_name": "event_outside_taxonomy",
+      "severity": "Critical",
+      "failed_records": 0
+    },
+    {
+      "rule_name": "opportunity_event_missing_id",
+      "severity": "Warning",
+      "failed_records": 0
+    },
+    {
+      "rule_name": "event_before_signup",
+      "severity": "Critical",
+      "failed_records": 0
+    },
+    {
+      "rule_name": "booking_before_invitation",
+      "severity": "Critical",
+      "failed_records": 0
+    }
+  ]
+}

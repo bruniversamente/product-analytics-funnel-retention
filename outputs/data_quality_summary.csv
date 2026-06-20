@@ -1,0 +1,7 @@
+rule_name,severity,failed_records
+duplicate_event_id,Critical,0
+event_without_valid_user,Critical,0
+event_outside_taxonomy,Critical,0
+opportunity_event_missing_id,Warning,0
+event_before_signup,Critical,0
+booking_before_invitation,Critical,0

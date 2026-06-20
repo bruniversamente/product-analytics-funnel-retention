@@ -1,0 +1,29 @@
+acquisition_channel,step_order,step_label,users_at_step,conversion_from_start
+Organic,1,Abertura do app,118,1.0
+Organic,2,Cadastro concluído,108,0.9153
+Organic,3,Perfil completo,88,0.7458
+Organic,4,Busca realizada,55,0.4661
+Organic,5,Oportunidade vista,34,0.2881
+Organic,6,Convite enviado,9,0.0763
+Organic,7,Reserva confirmada,3,0.0254
+Paid Search,1,Abertura do app,128,1.0
+Paid Search,2,Cadastro concluído,113,0.8828
+Paid Search,3,Perfil completo,78,0.6094
+Paid Search,4,Busca realizada,45,0.3516
+Paid Search,5,Oportunidade vista,31,0.2422
+Paid Search,6,Convite enviado,8,0.0625
+Paid Search,7,Reserva confirmada,6,0.0469
+Referral,1,Abertura do app,144,1.0
+Referral,2,Cadastro concluído,131,0.9097
+Referral,3,Perfil completo,98,0.6806
+Referral,4,Busca realizada,69,0.4792
+Referral,5,Oportunidade vista,37,0.2569
+Referral,6,Convite enviado,14,0.0972
+Referral,7,Reserva confirmada,8,0.0556
+Social,1,Abertura do app,110,1.0
+Social,2,Cadastro concluído,95,0.8636
+Social,3,Perfil completo,76,0.6909
+Social,4,Busca realizada,50,0.4545
+Social,5,Oportunidade vista,26,0.2364
+Social,6,Convite enviado,14,0.1273
+Social,7,Reserva confirmada,11,0.1

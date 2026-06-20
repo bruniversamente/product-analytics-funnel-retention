@@ -1,0 +1,2 @@
+total_users,app_open_users,signup_users,profile_users,search_users,opportunity_view_users,invitation_users,activated_users,activation_rate,avg_hours_to_activation,opportunities_created,opportunities_invited,confirmed_bookings,confirmation_rate,avg_hours_to_confirmation
+500,500,447,340,219,128,45,28,0.056,42.18,219,45,28,0.6222,41.89
