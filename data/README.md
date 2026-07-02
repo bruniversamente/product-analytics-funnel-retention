@@ -1,6 +1,6 @@
 # Data
 
-This folder contains synthetic data for a product analytics portfolio case. No real or sensitive data is used.
+This folder contains synthetic data for a product analytics case. No real or sensitive data is used.
 
 ## Files
 

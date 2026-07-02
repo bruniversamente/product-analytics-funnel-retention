@@ -10,7 +10,7 @@ dashboard/playzone_product_analytics_dashboard.html
 
 ## Objetivo
 
-Permitir que recrutadores, líderes de produto e analistas entendam rapidamente:
+Permitir que líderes de produto, analistas e stakeholders de negócio entendam rapidamente:
 
 - quantos usuários chegam ao momento de valor;
 - em qual etapa a jornada perde mais usuários;

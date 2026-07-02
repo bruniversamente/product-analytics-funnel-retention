@@ -2,11 +2,11 @@
 
 [Portuguese version](README.pt-BR.md)
 
-Main portfolio case study designed to answer a product analytics question: **where should Playzone act first to increase activation?**
+Product analytics case study designed to answer a product question: **where should Playzone act first to increase activation?**
 
 Playzone simulates a digital platform for experiences, games and activities. The case measures whether users reach the product's value moment, where the journey loses momentum, which acquisition channels activate better, whether activation connects with retention, and which marketplace categories create more liquidity.
 
-> Synthetic data created for portfolio purposes. The project simulates a real product analytics workflow with Python, SQL, DuckDB, tracking plan, data quality checks, ordered funnel metrics, retention cohorts and a reproducible HTML dashboard.
+> Synthetic data created for demonstration purposes. The project simulates a real product analytics workflow with Python, SQL, DuckDB, tracking plan, data quality checks, ordered funnel metrics, retention cohorts and a reproducible HTML dashboard.
 
 ## Executive Summary
 
@@ -32,16 +32,14 @@ Current build highlights:
 | Strongest category after invitation | Games, 72.7% confirmation |
 | Critical data quality failures | 0 |
 
-## Why This Is The Main Case
+## What The Analysis Demonstrates
 
-This is the strongest portfolio case because it combines the signals hiring teams usually look for:
+The project connects a product question to a measurable decision:
 
 1. **Clear business problem:** increase activation in a digital product.
 2. **Well-defined metric:** confirmed booking in an ordered funnel, not just clicks or signups.
 3. **Actionable diagnosis:** the largest leak is before the invitation, not at the top of the funnel.
 4. **Auditable delivery:** synthetic data, SQL, CSV outputs, documentation and a reproducible dashboard.
-
-Interview version: "I investigated the activation journey, found that only 5.6% of users reach the value moment, and identified that the first lever should be the move toward invitation sent, because confirmation after invitation is already relatively strong."
 
 ## Dashboard
 
@@ -58,7 +56,7 @@ dashboard/playzone_product_analytics_dashboard_en.html
 dashboard/playzone_product_analytics_dashboard_pt-BR.html
 ```
 
-It is designed for a recruiter or product leader: top KPIs, ordered funnel, channel comparison, retention by activation, category liquidity and weekly cohorts.
+It is designed for product and analytics readers: top KPIs, ordered funnel, channel comparison, retention by activation, category liquidity and weekly cohorts.
 
 ![Dashboard preview](images/dashboard_preview.png)
 

@@ -2,11 +2,11 @@
 
 [English version](README.md)
 
-Estudo de caso principal do portfólio, desenhado para responder uma pergunta de produto: **onde a Playzone deve atuar primeiro para aumentar a ativação?**
+Estudo de caso de Product Analytics desenhado para responder uma pergunta de produto: **onde a Playzone deve atuar primeiro para aumentar a ativação?**
 
 A Playzone simula uma plataforma digital de experiências, jogos e atividades. O case mede se usuários chegam ao momento de valor, onde a jornada perde força, quais canais ativam melhor, se ativação se conecta com retenção e quais categorias geram mais liquidez no marketplace.
 
-> Dados sintéticos criados para fins de portfólio. O projeto simula um cenário real de produto digital usando Python, SQL, DuckDB, tracking plan, validações de dados, métricas de funil, cohorts de retenção e um dashboard HTML reprodutível.
+> Dados sintéticos criados para demonstração. O projeto simula um cenário real de produto digital usando Python, SQL, DuckDB, tracking plan, validações de dados, métricas de funil, cohorts de retenção e um dashboard HTML reprodutível.
 
 ## Resumo executivo
 
@@ -30,16 +30,14 @@ Principais achados gerados pelo build atual:
 - Categoria mais forte depois do convite: **Games**, com **72,7%** de confirmação
 - Falhas críticas de qualidade de dados: **0**
 
-## Por que este é o case principal
+## O que a análise demonstra
 
-Este projeto é o mais forte do portfólio para entrevistas porque combina quatro sinais que recrutadores costumam procurar:
+O projeto conecta uma pergunta de produto a uma decisão mensurável:
 
 1. **Problema de negócio claro:** aumentar ativação em um produto digital.
 2. **Métrica bem definida:** reserva confirmada no funil ordenado, não apenas clique ou cadastro.
 3. **Diagnóstico acionável:** o maior vazamento está antes do convite, não no topo do funil.
 4. **Entrega auditável:** dados sintéticos, SQL, outputs CSV, documentação e dashboard reproduzível.
-
-Em uma entrevista, a história pode ser resumida assim: "eu investiguei a jornada de ativação, descobri que só 5,6% dos usuários chegam ao momento de valor e identifiquei que a primeira alavanca deveria ser a passagem para convite enviado, porque a taxa de confirmação após convite já é relativamente forte."
 
 ## Dashboard
 
@@ -49,7 +47,7 @@ O dashboard estático fica em:
 dashboard/playzone_product_analytics_dashboard_pt-BR.html
 ```
 
-Ele foi pensado para leitura de recrutador e liderança: cards no topo, funil ordenado, comparação por canal, retenção por ativação, liquidez por categoria e cohorts semanais.
+Ele foi pensado para leitura executiva e técnica: cards no topo, funil ordenado, comparação por canal, retenção por ativação, liquidez por categoria e cohorts semanais.
 
 ![Dashboard preview](images/dashboard_preview.pt-BR.png)
 
