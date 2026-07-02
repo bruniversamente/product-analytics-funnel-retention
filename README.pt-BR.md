@@ -41,11 +41,9 @@ O projeto conecta uma pergunta de produto a uma decisão mensurável:
 
 ## Dashboard
 
-O dashboard estático fica em:
+Abra o dashboard publicado: [Playzone Product Analytics](https://bruniversamente.github.io/dashboards/?case=playzone&lang=pt).
 
-```text
-dashboard/playzone_product_analytics_dashboard_pt-BR.html
-```
+Arquivo HTML local reproduzível: [playzone_product_analytics_dashboard_pt-BR.html](dashboard/playzone_product_analytics_dashboard_pt-BR.html).
 
 Ele foi pensado para leitura executiva e técnica: cards no topo, funil ordenado, comparação por canal, retenção por ativação, liquidez por categoria e cohorts semanais.
 
@@ -168,11 +166,7 @@ python scripts/build_outputs.py
 python scripts/run_sql.py
 ```
 
-4. Abra o dashboard:
-
-```text
-dashboard/playzone_product_analytics_dashboard_pt-BR.html
-```
+4. Abra o dashboard local: [playzone_product_analytics_dashboard_pt-BR.html](dashboard/playzone_product_analytics_dashboard_pt-BR.html).
 
 ## Recomendações simuladas
 

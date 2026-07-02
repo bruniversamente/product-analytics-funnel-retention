@@ -43,18 +43,14 @@ The project connects a product question to a measurable decision:
 
 ## Dashboard
 
-Open the static dashboard at:
+Open the published dashboard: [Playzone Product Analytics](https://bruniversamente.github.io/dashboards/?case=playzone&lang=en).
 
-```text
-dashboard/playzone_product_analytics_dashboard.html
-```
+Reproducible local HTML file: [playzone_product_analytics_dashboard.html](dashboard/playzone_product_analytics_dashboard.html).
 
 Explicit language variants are also generated:
 
-```text
-dashboard/playzone_product_analytics_dashboard_en.html
-dashboard/playzone_product_analytics_dashboard_pt-BR.html
-```
+- [playzone_product_analytics_dashboard_en.html](dashboard/playzone_product_analytics_dashboard_en.html)
+- [playzone_product_analytics_dashboard_pt-BR.html](dashboard/playzone_product_analytics_dashboard_pt-BR.html)
 
 It is designed for product and analytics readers: top KPIs, ordered funnel, channel comparison, retention by activation, category liquidity and weekly cohorts.
 
@@ -127,11 +123,7 @@ python scripts/build_outputs.py
 python scripts/run_sql.py
 ```
 
-Open:
-
-```text
-dashboard/playzone_product_analytics_dashboard.html
-```
+Open the local dashboard: [playzone_product_analytics_dashboard.html](dashboard/playzone_product_analytics_dashboard.html).
 
 ## Simulated Recommendations
 
